@@ -9,24 +9,11 @@
 
   <Domains>
     <Domain>
-      <DomainName>home.yourdomain1.com</DomainName>
+      <DomainName>home.dkw.io</DomainName>
       <ProviderType>AMAZON_ROUTE_53</ProviderType>
-      <HostedZoneId>Z1JFJGJ4HS2HFGAA</HostedZoneId>
-      <AccessID>DFFAUIADFU3AGUOIHJFJGH</AccessID>
-      <SecretKey>sadfizISFIiofhgSDF87SDFDKJhDfndfaldfasldfgndsalfsaidfhduu92334hdkvfjHS</SecretKey>
-      <MinimalUpdateIntervalInMinutes>5</MinimalUpdateIntervalInMinutes>
-      <LastIpAddress>74.125.226.111</LastIpAddress>
-      <LastUpdatedDateTime>2015-02-21T19:29:12.8381639Z</LastUpdatedDateTime>
-      <ChangeStatusID></ChangeStatusID>
-      <HistoricalIPAddress></HistoricalIPAddress>
-      <LastUpdatedReason>CHANGED</LastUpdatedReason>
-    </Domain>
-    <Domain>
-      <DomainName>home.yourdomain2.com</DomainName>
-      <ProviderType>AMAZON_ROUTE_53</ProviderType>
-      <HostedZoneId>Z2FJGJ4HS2HFGBB</HostedZoneId>
-      <AccessID>DFFAUIADFU3AGUOIHJFJGH</AccessID>
-      <SecretKey>sadfizISFIiofhgSDF87SDFDKJhDfndfaldfasldfgndsalfsaidfhduu92334hdkvfjHS</SecretKey>
+      <HostedZoneId>ZWW84X0TJXJHB</HostedZoneId>
+      <AccessID>AKIAI565QT3ETYSUTN7Q</AccessID>
+      <SecretKey>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</SecretKey>
       <MinimalUpdateIntervalInMinutes>5</MinimalUpdateIntervalInMinutes>
       <LastIpAddress>74.125.226.111</LastIpAddress>
       <LastUpdatedDateTime>2015-02-21T19:29:12.8381639Z</LastUpdatedDateTime>
@@ -57,7 +44,7 @@
     <IpChecker>
       <IpCheckerType>CUSTOM</IpCheckerType>
       <ClientType>WEB_HTTP</ClientType>
-      <IpCheckerUrl>http://checkip.yourdomain.com/</IpCheckerUrl>
+      <IpCheckerUrl>http://ipv4.icanhazip.com/</IpCheckerUrl>
     </IpChecker>
   </IpCheckers>
 

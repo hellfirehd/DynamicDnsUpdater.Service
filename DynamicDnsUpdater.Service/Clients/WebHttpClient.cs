@@ -1,19 +1,15 @@
 ﻿using DynamicDnsUpdater.Service.Configuration;
 using DynamicDnsUpdater.Service.Interface;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DynamicDnsUpdater.Service.Clients
 {
 
-    /// <summary>
-    /// Web Http Client with Delegate Parser
-    /// </summary>
-    public class WebHttpClient : IClient
+	/// <summary>
+	/// Web Http Client with Delegate Parser
+	/// </summary>
+	public class WebHttpClient : IClient
     {
         /// <summary>
         /// Get the content of the Html as string

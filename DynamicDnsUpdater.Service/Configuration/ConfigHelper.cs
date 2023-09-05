@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Security;
 using System.Xml;
 using System.Xml.Serialization;
 using DynamicDnsUpdater.Service.Encryption;
@@ -13,7 +7,7 @@ using DynamicDnsUpdater.Service.Models;
 
 namespace DynamicDnsUpdater.Service.Configuration
 {
-    public class ConfigHelper
+	public class ConfigHelper
     {
         // Basic encryption key
         public const string EncryptionKey = "bsBg34asdfi28B9N3489taduiBC23sdJNKIJFadSIUsaaFUU1344IDdsfF535fhB";

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace DynamicDnsUpdater.Service.Helpers
 {
-    public class IpHelper
+	public class IpHelper
     {
         // Validate if this is a valid IPV4 address
         public static bool IpAddressV4Validator(string ipString)

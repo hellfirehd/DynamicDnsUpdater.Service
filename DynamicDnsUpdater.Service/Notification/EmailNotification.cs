@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Net.Mail;
 using System.Net;
 using DynamicDnsUpdater.Service.Configuration;
@@ -10,7 +7,7 @@ using DynamicDnsUpdater.Service.Interface;
 
 namespace DynamicDnsUpdater.Service.Notification
 {
-    public class EmailNotification : INotification
+	public class EmailNotification : INotification
     {
         /// <summary>
         /// Simple Send email 

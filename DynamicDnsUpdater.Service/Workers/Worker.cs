@@ -6,20 +6,17 @@ using DynamicDnsUpdater.Service.Models;
 using DynamicDnsUpdater.Service.Notification;
 using DynamicDnsUpdater.Service.Providers;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
-using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 
 namespace DynamicDnsUpdater.Service.Workers
 {
-    /// <summary>
-    /// Timer class to periodically check for new treatment data
-    /// </summary>
-    public class Worker
+	/// <summary>
+	/// Timer class to periodically check for new treatment data
+	/// </summary>
+	public class Worker
     {
         // Timer for interval update and monitor status
         private Timer _updateTimer;

@@ -1,14 +1,9 @@
 ﻿using DynamicDnsUpdater.Service.Helpers;
 using DynamicDnsUpdater.Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DynamicDnsUpdater.Service.Providers
 {
-    public class CustomIpAddressChecker : IIpAddressChecker
+	public class CustomIpAddressChecker : IIpAddressChecker
     {
         /*
         

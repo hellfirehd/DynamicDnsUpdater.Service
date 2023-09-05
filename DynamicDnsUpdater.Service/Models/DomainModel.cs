@@ -1,18 +1,14 @@
 ﻿using DynamicDnsUpdater.Service.Interface;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DynamicDnsUpdater.Service.Models
 {
 
 
-    /// <summary>
-    /// Model mapping of Domain for XmlConfig
-    /// </summary>
-    public class DomainModel
+	/// <summary>
+	/// Model mapping of Domain for XmlConfig
+	/// </summary>
+	public class DomainModel
     {
         public string DomainName { get; set; }
         public Meta.Enum.DnsProviderType DnsProviderType { get; set; }

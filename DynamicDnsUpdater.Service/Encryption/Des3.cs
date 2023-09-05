@@ -1,17 +1,13 @@
-﻿using DynamicDnsUpdater.Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DynamicDnsUpdater.Service.Encryption
 {
-    /// <summary>
-    /// Simple Des3 encryption/decryption, it is symmetric so it is not extremely secure. 
-    /// </summary>
-    public static class Des3 
+	/// <summary>
+	/// Simple Des3 encryption/decryption, it is symmetric so it is not extremely secure. 
+	/// </summary>
+	public static class Des3 
     {
         /// <summary>
         /// Encrypt text

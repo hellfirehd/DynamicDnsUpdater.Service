@@ -1,20 +1,15 @@
-﻿using Amazon;
-using Amazon.Route53;
+﻿using Amazon.Route53;
 using Amazon.Route53.Model;
 using Amazon.Runtime;
-using DynamicDnsUpdater.Service.Configuration;
 using DynamicDnsUpdater.Service.Interface;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DynamicDnsUpdater.Service.Providers
 {
 
 
-    public class AmazonRoute53DnsProvider : IDnsProvider
+	public class AmazonRoute53DnsProvider : IDnsProvider
     {
         private IAmazonRoute53 _route53Client = null;
         private string _accessID;

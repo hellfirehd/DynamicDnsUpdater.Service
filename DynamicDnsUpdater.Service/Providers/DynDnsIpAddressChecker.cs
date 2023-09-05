@@ -1,15 +1,10 @@
 ﻿using DynamicDnsUpdater.Service.Helpers;
 using DynamicDnsUpdater.Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace DynamicDnsUpdater.Service.Providers
 {
-    public class DynDnsIpAddressChecker : IIpAddressChecker
+	public class DynDnsIpAddressChecker : IIpAddressChecker
     {
         /// <summary>
         /// Get Current IP address 

@@ -1,16 +1,11 @@
 ﻿using DynamicDnsUpdater.Service.Helpers;
 using DynamicDnsUpdater.Service.Interface;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Script.Serialization;
 
 
 namespace DynamicDnsUpdater.Service.Providers
 {
-    public class JsonIpAddressChecker : IIpAddressChecker
+	public class JsonIpAddressChecker : IIpAddressChecker
     {
         /// <summary>
         /// Get Current IP address 

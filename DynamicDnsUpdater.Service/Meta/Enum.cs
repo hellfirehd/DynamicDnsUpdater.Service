@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DynamicDnsUpdater.Service.Meta
+﻿namespace DynamicDnsUpdater.Service.Meta
 {
-    public class Enum
+	public class Enum
     {
         /// <summary>
         /// Category are define to match the one defined in "categorySources" names in app.config can be routed differently, now default everything goes to "General" bucket

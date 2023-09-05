@@ -16,10 +16,10 @@ namespace DynamicDnsUpdater.Service.Clients
         /// </summary>
         /// <param name="IpProviderUrl"></param>
         /// <returns></returns>
-        public string GetContent(string IpProviderUrl, DelegateParser parser)
+        public String GetContent(String IpProviderUrl, DelegateParser parser)
         {
-            string content = null;
-            int timeoutInMilliSeconds = Convert.ToInt32(ConfigHelper.ClientTimeoutInMinutes) * 60 *1000;
+            String content = null;
+            var timeoutInMilliSeconds = Convert.ToInt32(ConfigHelper.ClientTimeoutInMinutes) * 60 *1000;
 
             // Use IDisposable webclient to get the page of content of existing IP
             using (TimeoutWebClient client = new TimeoutWebClient((timeoutInMilliSeconds)))
@@ -38,9 +38,9 @@ namespace DynamicDnsUpdater.Service.Clients
         /// </summary>
         public class TimeoutWebClient : WebClient
         {
-            public int Timeout { get; set; }
+            public Int32 Timeout { get; set; }
 
-            public TimeoutWebClient(int timeout)
+            public TimeoutWebClient(Int32 timeout)
             {
                 Timeout = timeout;
             }

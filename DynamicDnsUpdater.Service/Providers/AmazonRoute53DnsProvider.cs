@@ -12,9 +12,9 @@ namespace DynamicDnsUpdater.Service.Providers
 	public class AmazonRoute53DnsProvider : IDnsProvider
     {
         private IAmazonRoute53 _route53Client = null;
-        private string _accessID;
-        private string _secretKey;
-        private string _providerUrl;
+        private String _accessID;
+        private String _secretKey;
+        private String _providerUrl;
 
 
         /// <summary>
@@ -59,10 +59,10 @@ namespace DynamicDnsUpdater.Service.Providers
         /// <param name="hostZoneId"></param>
         /// <param name="newIPaddress"></param>
         /// <returns></returns>
-        public string UpdateDns(string accessID, string secretKey, string providerUrl, string domainName, string hostZoneId, string newIPaddress)
+        public String UpdateDns(String accessID, String secretKey, String providerUrl, String domainName, String hostZoneId, String newIPaddress)
         {
 
-            string changeRequestId = null;
+            String changeRequestId = null;
             
             // Assign parameters
             _accessID = accessID;
@@ -109,7 +109,7 @@ namespace DynamicDnsUpdater.Service.Providers
         ///  AmazonRoute53 takes sevveral minutes to propagate through all the DNS servers, Status is Pending after submit
         /// </summary>
         /// <param name="id"></param>
-        public Meta.Enum.ChangeStatusType CheckUpdateStatus(string accessID, string secretKey, string providerUrl, string id)
+        public Meta.Enum.ChangeStatusType CheckUpdateStatus(String accessID, String secretKey, String providerUrl, String id)
         {
             if (String.IsNullOrEmpty(id))
                 return Meta.Enum.ChangeStatusType.INSYNC;

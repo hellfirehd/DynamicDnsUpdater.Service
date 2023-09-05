@@ -13,12 +13,12 @@ namespace DynamicDnsUpdater.Service.Notification
         /// Simple Send email 
         /// </summary>
         /// <param name="body"></param>
-        public void Send(string body)
+        public void Send(String body)
         {
             var fromAddress = new MailAddress(ConfigHelper.FromEmail);
             var toAddress = new MailAddress(ConfigHelper.ToEmail);
-            string password = ConfigHelper.Password;
-            string subject = ConfigHelper.Subject;
+            var password = ConfigHelper.Password;
+            var subject = ConfigHelper.Subject;
 
             using (var smtp = new SmtpClient
             {

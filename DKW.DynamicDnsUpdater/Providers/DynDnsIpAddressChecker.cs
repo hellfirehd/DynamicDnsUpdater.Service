@@ -12,7 +12,7 @@ namespace DKW.DynamicDnsUpdater.Providers
 		/// <param name="ipProviderURL"></param>
 		/// <param name="client"></param>
 		/// <returns></returns>
-		public string GetCurrentIpAddress(string ipProviderURL, IClient client)
+		public String GetCurrentIpAddress(String ipProviderURL, IClient client)
 		{
 			// Pass the parser as function to the client
 			DelegateParser handler = Parse;
@@ -25,9 +25,9 @@ namespace DKW.DynamicDnsUpdater.Providers
 		/// </summary>
 		/// <param name="html"></param>
 		/// <returns></returns>
-		private string Parse(string html)
+		private String Parse(String html)
 		{
-			string ipString = null;
+            String ipString = null;
 
 			// Load the HTML into XmlDoc
 			XmlDocument xmlDocument = new XmlDocument();

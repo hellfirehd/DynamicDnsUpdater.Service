@@ -10,7 +10,7 @@ namespace DKW.DynamicDnsUpdater.Models
 	{
 		public Meta.Enum.IpCheckerType IpCheckerType { get; set; }
 		public Meta.Enum.ClientType ClientType { get; set; }
-		public string IpCheckerUrl { get; set; }
+		public String IpCheckerUrl { get; set; }
 		public IClient Client { get; set; }
 		public IIpAddressChecker IpAddressChecker { get; set; }
 	}

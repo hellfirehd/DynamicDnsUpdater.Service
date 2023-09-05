@@ -5,7 +5,6 @@ using DynamicDnsUpdater.Service.Interface;
 using DynamicDnsUpdater.Service.Models;
 using DynamicDnsUpdater.Service.Notification;
 using DynamicDnsUpdater.Service.Providers;
-using Microsoft.Practices.EnterpriseLibrary.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +12,10 @@ using System.Timers;
 
 namespace DynamicDnsUpdater.Service.Workers
 {
-	/// <summary>
-	/// Timer class to periodically check for new treatment data
-	/// </summary>
-	public class Worker
+    /// <summary>
+    /// Timer class to periodically check for new treatment data
+    /// </summary>
+    public class Worker
     {
         // Timer for interval update and monitor status
         private Timer _updateTimer;
@@ -74,7 +73,7 @@ namespace DynamicDnsUpdater.Service.Workers
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void UpdateTimerElapsed(object sender, ElapsedEventArgs e)
+        private void UpdateTimerElapsed(Object sender, ElapsedEventArgs e)
         {
             this.RunUpdate();
         }
@@ -85,7 +84,7 @@ namespace DynamicDnsUpdater.Service.Workers
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void MonitorTimerElapsed(object sender, ElapsedEventArgs e)
+        private void MonitorTimerElapsed(Object sender, ElapsedEventArgs e)
         {
             this.RunMonitor();
         }
@@ -131,8 +130,8 @@ namespace DynamicDnsUpdater.Service.Workers
         public void RunUpdate()
         {
 
-            string currentIpAddress = null;
-            string updatedId = null;
+            String currentIpAddress = null;
+            String updatedId = null;
 
             // Resolve the instance based on the xml config
             if (_domainModelList.Count() > 0)
@@ -145,11 +144,11 @@ namespace DynamicDnsUpdater.Service.Workers
                         updatedId = null; // reset it for each domain                       
 
                         // Check if it meets the minimal update settings (some DNS update system blocks your update to prevent flooding if you update too frequtently)
-                        bool isUpdatable = ((domain.LastUpdatedDateTime != null) &&
+                        var isUpdatable = ((domain.LastUpdatedDateTime != null) &&
                             (((DateTime)domain.LastUpdatedDateTime).AddMinutes(Convert.ToInt32(domain.MinimalUpdateIntervalInMinutes)) < DateTime.UtcNow)) ? true : false;
 
                         // Check if we should force update with the preset days in config
-                        bool isForceUpdate = ((domain.LastUpdatedDateTime != null) &&
+                        var isForceUpdate = ((domain.LastUpdatedDateTime != null) &&
                             (((DateTime)domain.LastUpdatedDateTime) < DateTime.UtcNow.AddDays(-Convert.ToInt32(ConfigHelper.ForceUpdateInDays)))) ? true : false;
 
                         // Get current IP (prevent from calling IPChecker for multiple times between domains)
@@ -160,7 +159,7 @@ namespace DynamicDnsUpdater.Service.Workers
                         if (currentIpAddress != null)
                         {
                             // Compare to last IP with current Ip
-                            bool hasIpAddressChanged = ((String.IsNullOrEmpty(domain.LastIpAddress)) || (currentIpAddress.Trim() != domain.LastIpAddress.Trim())) ? true : false;
+                            var hasIpAddressChanged = ((String.IsNullOrEmpty(domain.LastIpAddress)) || (currentIpAddress.Trim() != domain.LastIpAddress.Trim())) ? true : false;
 
                             // Update the IP
                             if ((isUpdatable && isForceUpdate) || (isUpdatable && hasIpAddressChanged))
@@ -259,9 +258,9 @@ namespace DynamicDnsUpdater.Service.Workers
         /// Get Ip Address from IpCheckers (If one fails, automatically try next one)
         /// </summary>
         /// <returns></returns>
-        private string GetCurrentIpAddress()
+        private String GetCurrentIpAddress()
         {
-            string currentIpAddress = null;
+            String currentIpAddress = null;
 
             // Loop through the whole list, if one fails go to next one
             foreach (IpCheckerModel model in _ipCheckerModelList)
@@ -368,7 +367,7 @@ namespace DynamicDnsUpdater.Service.Workers
         {
             try
             {
-                string body = "The following domains have been updated:<br/><br/>";
+                var body = "The following domains have been updated:<br/><br/>";
                 foreach (DomainModel item in domainModelList)
                 {
                     body += String.Format("Domain={0}, IP from {1} to IP={2}, Local Time={3}, Reason={4}", item.DomainName, item.HistoricalIpAddress, item.LastIpAddress, item.LastUpdatedDateTime.ToLocalTime(), Enum.GetName(typeof(Meta.Enum.UpdateReasonType), item.LastUpdatedReason)) + "<br/>";

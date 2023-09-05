@@ -1,13 +1,10 @@
-﻿using System;
-using System.Xml.Serialization;
-
-namespace DynamicDnsUpdater.Service.Configuration
+﻿namespace DynamicDnsUpdater.Service.Configuration
 {
-	/// <summary>
-	/// Xml Serialization on mapping to the XmlConfig.xml
-	/// </summary>
+    /// <summary>
+    /// Xml Serialization on mapping to the XmlConfig.xml
+    /// </summary>
 
-	[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
     public class XmlConfig
     {
@@ -27,7 +24,7 @@ namespace DynamicDnsUpdater.Service.Configuration
     public class Provider
     {
         public DynamicDnsUpdater.Service.Meta.Enum.DnsProviderType ProviderType { get; set; }
-        public string ProviderUrl { get; set; }
+        public System.String ProviderUrl { get; set; }
     }
 
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -35,7 +32,7 @@ namespace DynamicDnsUpdater.Service.Configuration
     {
         public DynamicDnsUpdater.Service.Meta.Enum.IpCheckerType IpCheckerType { get; set; }
         public DynamicDnsUpdater.Service.Meta.Enum.ClientType ClientType { get; set; }
-        public string IpCheckerUrl { get; set; }
+        public System.String IpCheckerUrl { get; set; }
     }
 }
 

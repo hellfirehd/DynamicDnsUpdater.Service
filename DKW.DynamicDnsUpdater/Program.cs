@@ -6,7 +6,7 @@ namespace DKW.DynamicDnsUpdater;
 
 public class Program
 {
-	public static void Main(string[] args)
+	public static void Main(String[] args)
 	{
 		IHost host = Host.CreateDefaultBuilder(args)
 			.ConfigureServices((context, services) =>

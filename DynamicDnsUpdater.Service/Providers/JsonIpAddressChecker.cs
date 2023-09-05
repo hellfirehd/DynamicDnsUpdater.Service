@@ -13,7 +13,7 @@ namespace DynamicDnsUpdater.Service.Providers
         /// <param name="ipProviderURL"></param>
         /// <param name="client"></param>
         /// <returns></returns>
-        public string GetCurrentIpAddress(string ipProviderURL, IClient client)
+        public System.String GetCurrentIpAddress(System.String ipProviderURL, IClient client)
         {
             // Pass the parser as function to the client
             DelegateParser handler = Parse;
@@ -26,14 +26,14 @@ namespace DynamicDnsUpdater.Service.Providers
         /// </summary>
         /// <param name="html"></param>
         /// <returns></returns>
-        private string Parse(string jsonString)
+        private System.String Parse(System.String jsonString)
         {
-            string ipString = null;
+            System.String ipString = null;
 
             // format: {"ip":"x.x.x.x","about":"/about","Pro!":"http://getjsonip.com"}
 
             var jsonSerializer = new JavaScriptSerializer();
-            Dictionary<string, string> data = jsonSerializer.Deserialize<Dictionary<string, string>>(jsonString);
+            Dictionary<System.String, System.String> data = jsonSerializer.Deserialize<Dictionary<System.String, System.String>>(jsonString);
             ipString = data["ip"];
 
             // Validate if this is a valid IPV4 address

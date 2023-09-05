@@ -10,12 +10,12 @@ namespace DynamicDnsUpdater.Service
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main(System.String[] args)
         {
             CreateHostBuilder(args).Build().Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        public static IHostBuilder CreateHostBuilder(System.String[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {

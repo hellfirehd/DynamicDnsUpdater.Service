@@ -1,6 +1,4 @@
-﻿using DKW.DynamicDnsUpdater.Interface;
-
-namespace DKW.DynamicDnsUpdater.Configuration;
+﻿namespace DKW.DynamicDnsUpdater.Configuration;
 
 public class DynamicDnsUpdaterOptions
 {
@@ -16,15 +14,15 @@ public class DynamicDnsUpdaterOptions
 
 public class Domain
 {
-	public string DomainName { get; set; } = String.Empty;
+	public String DomainName { get; set; } = String.Empty;
 	public DnsProviderType ProviderType { get; set; }
-	public string HostedZoneId { get; set; } = String.Empty;
-	public string AccessID { get; set; } = String.Empty;
-	public string SecretKey { get; set; } = String.Empty;
+	public String HostedZoneId { get; set; } = String.Empty;
+	public String AccessID { get; set; } = String.Empty;
+	public String SecretKey { get; set; } = String.Empty;
 	public Int32 MinimalUpdateIntervalInMinutes { get; set; }
-	public string LastIpAddress { get; set; } = String.Empty;
+	public String LastIpAddress { get; set; } = String.Empty;
 	public DateTime? LastUpdatedDateTime { get; set; }
-	public string ChangeStatusID { get; set; } = String.Empty;
+	public String ChangeStatusID { get; set; } = String.Empty;
 	public ICollection<String> HistoricalIPAddress { get; set; } = new List<String>();
 	public UpdateReasonType LastUpdatedReason { get; set; }
 }
@@ -40,7 +38,7 @@ public class IpChecker
 {
 	public IpCheckerType IpCheckerType { get; set; }
 	public ClientType ClientType { get; set; }
-	public string IpCheckerUrl { get; set; } = String.Empty;
+	public String IpCheckerUrl { get; set; } = String.Empty;
 }
 
 public enum DnsProviderType

@@ -2,6 +2,6 @@
 {
 	public interface IIpAddressChecker
 	{
-		string GetCurrentIpAddress(string IpProviderURL, IClient client);
+        String GetCurrentIpAddress(String IpProviderURL, IClient client);
 	}
 }

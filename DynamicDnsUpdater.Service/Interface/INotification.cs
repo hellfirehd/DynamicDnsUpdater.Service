@@ -2,6 +2,6 @@
 {
 	public interface INotification
     {
-        void Send(string content);
+        void Send(System.String content);
     }
 }

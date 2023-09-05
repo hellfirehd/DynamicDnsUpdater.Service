@@ -10,20 +10,20 @@ namespace DynamicDnsUpdater.Service.Configuration
 	public class ConfigHelper
     {
         // Basic encryption key
-        public const string EncryptionKey = "bsBg34asdfi28B9N3489taduiBC23sdJNKIJFadSIUsaaFUU1344IDdsfF535fhB";
+        public const String EncryptionKey = "bsBg34asdfi28B9N3489taduiBC23sdJNKIJFadSIUsaaFUU1344IDdsfF535fhB";
 
         // Helper for App.config
-        public static string XmlConfigFileName { get { return ConfigurationManager.AppSettings["XmlConfigFileName"]; } }
+        public static String XmlConfigFileName { get { return ConfigurationManager.AppSettings["XmlConfigFileName"]; } }
 
-        public static string UpdateIntervalInMinutes { get { return ConfigurationManager.AppSettings["UpdateIntervalInMinutes"]; } }
-        public static string MonitorStatusInMinutes { get { return ConfigurationManager.AppSettings["MonitorStatusInMinutes"]; } }
-        public static string ClientTimeoutInMinutes { get { return ConfigurationManager.AppSettings["ClientTimeoutInMinutes"]; } }
-        public static string ForceUpdateInDays { get { return ConfigurationManager.AppSettings["ForceUpdateInDays"]; } }
+        public static String UpdateIntervalInMinutes { get { return ConfigurationManager.AppSettings["UpdateIntervalInMinutes"]; } }
+        public static String MonitorStatusInMinutes { get { return ConfigurationManager.AppSettings["MonitorStatusInMinutes"]; } }
+        public static String ClientTimeoutInMinutes { get { return ConfigurationManager.AppSettings["ClientTimeoutInMinutes"]; } }
+        public static String ForceUpdateInDays { get { return ConfigurationManager.AppSettings["ForceUpdateInDays"]; } }
 
-        public static string FromEmail { get { return ConfigurationManager.AppSettings["FromEmail"]; } }
-        public static string ToEmail { get { return ConfigurationManager.AppSettings["ToEmail"]; } }
+        public static String FromEmail { get { return ConfigurationManager.AppSettings["FromEmail"]; } }
+        public static String ToEmail { get { return ConfigurationManager.AppSettings["ToEmail"]; } }
 
-        public static string Password {
+        public static String Password {
             get {
                 if (EnablePasswordEncryption)
                     return Des3.Decrypt(ConfigurationManager.AppSettings["Password"], EncryptionKey);
@@ -32,10 +32,10 @@ namespace DynamicDnsUpdater.Service.Configuration
             }
         }
 
-        public static string Subject { get { return ConfigurationManager.AppSettings["Subject"]; } }
-        public static string Host { get { return ConfigurationManager.AppSettings["Host"]; } }
-        public static string Port { get { return ConfigurationManager.AppSettings["Port"]; } }
-        public static bool EnablePasswordEncryption { get { return Convert.ToBoolean(ConfigurationManager.AppSettings["EnablePasswordEncryption"]); } }
+        public static String Subject { get { return ConfigurationManager.AppSettings["Subject"]; } }
+        public static String Host { get { return ConfigurationManager.AppSettings["Host"]; } }
+        public static String Port { get { return ConfigurationManager.AppSettings["Port"]; } }
+        public static Boolean EnablePasswordEncryption { get { return Convert.ToBoolean(ConfigurationManager.AppSettings["EnablePasswordEncryption"]); } }
 
         /// <summary>
         /// Load Config from XML to objects
@@ -58,7 +58,7 @@ namespace DynamicDnsUpdater.Service.Configuration
         /// <param name="domainName"></param>
         /// <param name="dateTimeinUTC"></param>
         /// <returns></returns>
-        public static bool UpdateDomainInformation(DomainModel domain)
+        public static Boolean UpdateDomainInformation(DomainModel domain)
         {
             // Use Xpath to update (debatable - not deserialize the xml?)
             XmlDocument xmlDocument = new XmlDocument();
@@ -91,7 +91,7 @@ namespace DynamicDnsUpdater.Service.Configuration
         /// <param name="domainName"></param>
         /// <param name="changeStatus"></param>
         /// <returns></returns>
-        public static bool UpdateChangeStatusInformation(string domainName, string changeStatusId)
+        public static Boolean UpdateChangeStatusInformation(String domainName, String changeStatusId)
         {
             // Use Xpath to update (debatable - not deserialize the xml?)
             XmlDocument xmlDocument = new XmlDocument();

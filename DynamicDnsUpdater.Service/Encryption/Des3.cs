@@ -15,14 +15,14 @@ namespace DynamicDnsUpdater.Service.Encryption
         /// <param name="plainText"></param>
         /// <param name="key"></param>
         /// <returns></returns>
-        public static string Encrypt(string plainText, string key)
+        public static String Encrypt(String plainText, String key)
         {
             TripleDESCryptoServiceProvider DES = new  TripleDESCryptoServiceProvider();
             MD5CryptoServiceProvider hashMD5 = new  MD5CryptoServiceProvider();
 
             DES.Key = hashMD5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(key));
             DES.Mode = CipherMode.ECB;
-            byte[] Buffer =  ASCIIEncoding.ASCII.GetBytes(plainText.Trim());
+            Byte[] Buffer =  ASCIIEncoding.ASCII.GetBytes(plainText.Trim());
             return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(
                 Convert.ToBase64String(DES.CreateEncryptor().TransformFinalBlock(Buffer, 0, Buffer.Length)).Trim()));
 
@@ -34,7 +34,7 @@ namespace DynamicDnsUpdater.Service.Encryption
         /// <param name="base64Text"></param>
         /// <param name="key"></param>
         /// <returns></returns>
-        public static string Decrypt(string base64Text, string key)
+        public static String Decrypt(String base64Text, String key)
         {
             TripleDESCryptoServiceProvider DES = new TripleDESCryptoServiceProvider();
             MD5CryptoServiceProvider hashMD5 = new MD5CryptoServiceProvider();
@@ -42,7 +42,7 @@ namespace DynamicDnsUpdater.Service.Encryption
             DES.Key = hashMD5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(key));
             DES.Mode = CipherMode.ECB;
 
-            byte[] Buffer = Convert.FromBase64String(System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(base64Text.Trim())));
+            Byte[] Buffer = Convert.FromBase64String(System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(base64Text.Trim())));
             return  ASCIIEncoding.ASCII.GetString(DES.CreateDecryptor().TransformFinalBlock(Buffer, 0, Buffer.Length)).Trim();
 
 

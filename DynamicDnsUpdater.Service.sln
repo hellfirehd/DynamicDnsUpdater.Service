@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicDnsUpdater.Service", "DynamicDnsUpdater.Service\DynamicDnsUpdater.Service.csproj", "{FF83763D-0870-4F80-ADBD-141D70E0CE5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKW.DynamicDnsUpdater", "DKW.DynamicDnsUpdater\DKW.DynamicDnsUpdater.csproj", "{8CDFF03E-27CB-4A36-9028-D6C2FBAB0FBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DKW.DynamicDnsUpdater", "DKW.DynamicDnsUpdater\DKW.DynamicDnsUpdater.csproj", "{8CDFF03E-27CB-4A36-9028-D6C2FBAB0FBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

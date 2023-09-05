@@ -75,7 +75,7 @@ public class Worker : BackgroundService
 					&& (domain.LastUpdatedDateTime.Value.AddMinutes(domain.MinimalUpdateIntervalInMinutes) < DateTime.UtcNow);
 
 				// Check if we should force update with the preset days in config
-				bool isForceUpdate = domain.LastUpdatedDateTime.HasValue
+				var isForceUpdate = domain.LastUpdatedDateTime.HasValue
 					&& domain.LastUpdatedDateTime < DateTime.UtcNow.AddDays(-_options.ForceUpdateInDays);
 
 				var currentIpAddress = GetCurrentIpAddress();
@@ -85,7 +85,7 @@ public class Worker : BackgroundService
 				{
 					var lastIpAddress = domain.LastIpAddress?.Trim() ?? String.Empty;
 					// Compare to last IP with current Ip
-					bool ipAddressChanged = String.IsNullOrWhiteSpace(lastIpAddress) || (currentIpAddress.Trim() != lastIpAddress);
+					var ipAddressChanged = String.IsNullOrWhiteSpace(lastIpAddress) || (currentIpAddress.Trim() != lastIpAddress);
 
 					// Update the IP
 					if ((isUpdatable && isForceUpdate) || (isUpdatable && ipAddressChanged))
@@ -196,7 +196,7 @@ public class Worker : BackgroundService
 	/// Get Ip Address from IpCheckers (If one fails, automatically try next one)
 	/// </summary>
 	/// <returns></returns>
-	private string GetCurrentIpAddress()
+	private String GetCurrentIpAddress()
 	{
 		// Loop through the whole list, if one fails go to next one
 		foreach (IpCheckerModel model in _options.IpCheckers)
@@ -240,7 +240,7 @@ public class Worker : BackgroundService
 	{
 		try
 		{
-			string body = "The following domains have been updated:<br/><br/>";
+			var body = "The following domains have been updated:<br/><br/>";
 			foreach (Domain item in domainModelList)
 			{
 				body += String.Format("Domain={0}, IP from {1} to IP={2}, Local Time={3}, Reason={4}", item.DomainName, item.HistoricalIpAddress, item.LastIpAddress, item.LastUpdatedDateTime.ToLocalTime(), Enum.GetName(typeof(Meta.Enum.UpdateReasonType), item.LastUpdatedReason)) + "<br/>";

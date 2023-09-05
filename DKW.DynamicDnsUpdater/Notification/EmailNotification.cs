@@ -1,24 +1,22 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using System.Net.Mail;
 using System.Net;
-using DynamicDnsUpdater.Service.Configuration;
 using DKW.DynamicDnsUpdater.Interface;
 
 namespace DKW.DynamicDnsUpdater.Notification
 {
-	public class EmailNotification : INotification
+    public class EmailNotification : INotification
 	{
 		/// <summary>
 		/// Simple Send email 
 		/// </summary>
 		/// <param name="body"></param>
-		public void Send(string body)
+		public void Send(String body)
 		{
 			var fromAddress = new MailAddress(ConfigHelper.FromEmail);
 			var toAddress = new MailAddress(ConfigHelper.ToEmail);
-			string password = ConfigHelper.Password;
-			string subject = ConfigHelper.Subject;
+            String password = ConfigHelper.Password;
+            String subject = ConfigHelper.Subject;
 
 			using (var smtp = new SmtpClient
 			{

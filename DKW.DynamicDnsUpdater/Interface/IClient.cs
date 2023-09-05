@@ -2,6 +2,6 @@
 {
 	public interface IClient
 	{
-		string GetContent(string IpProviderUrl, DelegateParser parser);
+        String GetContent(String IpProviderUrl, DelegateParser parser);
 	}
 }

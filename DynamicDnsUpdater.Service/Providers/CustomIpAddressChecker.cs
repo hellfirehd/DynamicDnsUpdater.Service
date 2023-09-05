@@ -29,13 +29,13 @@ namespace DynamicDnsUpdater.Service.Providers
         /// <param name="ipProviderURL"></param>
         /// <param name="client"></param>
         /// <returns></returns>
-        public string GetCurrentIpAddress(string ipProviderURL, IClient client)
+        public System.String GetCurrentIpAddress(System.String ipProviderURL, IClient client)
         {
             // Pass the parser as function to the client
             DelegateParser handler = Parse;
 
             // No parsing needed, pure IP address return without any HTML markup
-            string ipString = client.GetContent(ipProviderURL, handler);
+            var ipString = client.GetContent(ipProviderURL, handler);
 
             if (IpHelper.IpAddressV4Validator(ipString))
                 return ipString;
@@ -49,7 +49,7 @@ namespace DynamicDnsUpdater.Service.Providers
         /// </summary>
         /// <param name="html"></param>
         /// <returns></returns>
-        private string Parse(string input)
+        private System.String Parse(System.String input)
         {
             return input;
         }
